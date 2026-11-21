@@ -1,0 +1,26 @@
+[
+  {
+    "case_id": "eval_01_concurrent_isolation",
+    "description": "Concurrent requests with distinct request_id values maintain isolated TodoItem lists with zero cross-request leaks.",
+    "requires_code_proof": true,
+    "expected_status": "completed"
+  },
+  {
+    "case_id": "eval_02_proof_gate_enforcement",
+    "description": "Calculation todo cannot transition to completed without a passing CodeInterpreterProof.",
+    "requires_code_proof": true,
+    "expected_status": "blocked"
+  },
+  {
+    "case_id": "eval_03_interpreter_failure_trace",
+    "description": "Failed Python Code Interpreter execution surfaces stderr and exit_code in InvocationTrace.proof_failures.",
+    "requires_code_proof": true,
+    "expected_status": "failed"
+  },
+  {
+    "case_id": "eval_04_model_timeout_envelope",
+    "description": "Model invocation timeout produces a clean structured error envelope with retryable=true.",
+    "requires_code_proof": false,
+    "expected_status": "timeout_error"
+  }
+]
